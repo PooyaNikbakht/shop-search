@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shop-search",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Self-reference, required by OpenNext. Must match "name" above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "shop-search"
+    }
+  ],
+  "observability": { "enabled": true },
+  // Non-secret settings. Put API keys in secrets: `npx wrangler secret put ANTHROPIC_API_KEY`.
+  // The public demo runs the offline parser (no API key, no cost). Set "anthropic" once a key is added.
+  "vars": {
+    "LLM_PROVIDER": "offline",
+    "ANTHROPIC_MODEL": "claude-haiku-5-5",
+    "DEMO_LIMIT_PER_IP_PER_HOUR": "20",
+    "DEMO_LIMIT_GLOBAL_PER_DAY": "1000"
+  },
+  // Served only on shop.pooya.website, where the zone's DDoS and rate-limit rules apply.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Caps CPU per request (Workers Paid), so one runaway or abusive request can't run up usage.
+  "limits": { "cpu_ms": 100 },
+  "routes": [{ "pattern": "shop.pooya.website", "custom_domain": true }]
+}

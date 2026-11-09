@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --surface: #f6f7f9;
+  --ink: #111827;
+  --muted: #5b6472;
+  --border: #e3e6ea;
+  --accent: #0f766e;
+  --danger: #b42318;
+  --accent-ink: #ffffff;
+  --accent-2: #f59e0b;
+  /* Hero band and flat mountain illustration. Light text sits on it in both themes. */
+  --hero: #0f2e2a;
+  --hero-ink: #f0fdfa;
+  --hero-muted: #b5cfc9;
+  --hero-line: rgb(240 253 250 / 0.22);
+  --hero-far: #174640;
+  --hero-mid: #1f5f55;
+  --hero-near: #2a7a6b;
+  --hero-tree: #123d36;
+  --card: #ffffff;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0f14;
+    --surface: #121821;
+    --ink: #e6e8eb;
+    --muted: #9aa3af;
+    --border: #232b36;
+    --accent: #2dd4bf;
+    --danger: #f97066;
+    --accent-ink: #0b0f14;
+    --accent-2: #fbbf24;
+    --hero: #0c2522;
+    --hero-far: #123a35;
+    --hero-mid: #184e46;
+    --hero-near: #1f6357;
+    --hero-tree: #0d2c28;
+    --card: #121821;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-danger: var(--danger);
+  --color-accent-2: var(--accent-2);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-line: var(--hero-line);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --radius-card: 8px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* In the base layer so utilities like focus:outline-none can override it
+   (the search card draws one ring around the whole field instead). */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Teal focus rings disappear on the dark hero band; switch to amber there. */
+  .on-hero :focus-visible {
+    outline-color: var(--accent-2);
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

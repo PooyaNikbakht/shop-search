@@ -1,0 +1,1563 @@
+{
+  "provider": "offline",
+  "model": "rules",
+  "createdAt": "2026-10-30T17:31:31.080Z",
+  "cases": 41,
+  "exactMatch": 0.9512195121951219,
+  "micro": {
+    "precision": 0.991869918699187,
+    "recall": 0.9838709677419355
+  },
+  "fields": [
+    {
+      "field": "categories",
+      "tp": 40,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "brands",
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "genders",
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "priceMin",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "priceMax",
+      "tp": 8,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1,
+      "recall": 0.8888888888888888
+    },
+    {
+      "field": "minRating",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "sizes",
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "colours",
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "materialsInclude",
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.8571428571428571,
+      "recall": 1
+    },
+    {
+      "field": "materialsExclude",
+      "tp": 7,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1,
+      "recall": 0.875
+    },
+    {
+      "field": "waterproof",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "maxWeightGrams",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "inStock",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "onSale",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "field": "unmapped",
+      "tp": 6,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.6666666666666666,
+      "recall": 1
+    }
+  ],
+  "latencyMs": {
+    "mean": 0.752755097560985,
+    "p50": 0.29462499999999636,
+    "p95": 1.5893750000000182
+  },
+  "results": [
+    {
+      "id": "easy-headline",
+      "query": "waterproof women's hiking boots under $150, size 8, 4 stars and up",
+      "tags": [
+        "easy",
+        "size"
+      ],
+      "exact": true,
+      "ms": 16,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 150,
+        "minRating": 4,
+        "sizes": [
+          "8"
+        ],
+        "waterproof": true
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 150,
+        "minRating": 4,
+        "sizes": [
+          "8"
+        ],
+        "waterproof": true,
+        "keywords": [
+          "hiking",
+          "boots"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "hiking",
+        "boots"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "easy-colour",
+      "query": "men's jackets in black",
+      "tags": [
+        "easy",
+        "colour"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "men"
+        ],
+        "colours": [
+          "black"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "men"
+        ],
+        "colours": [
+          "black"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "range-k",
+      "query": "tents under 1.5k",
+      "tags": [
+        "range"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "tents"
+        ],
+        "priceMax": 1500
+      },
+      "predicted": {
+        "categories": [
+          "tents"
+        ],
+        "priceMax": 1500
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "range-bucks",
+      "query": "backpack between 50 and 80 bucks",
+      "tags": [
+        "range"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "backpacks"
+        ],
+        "priceMin": 50,
+        "priceMax": 80
+      },
+      "predicted": {
+        "categories": [
+          "backpacks"
+        ],
+        "priceMin": 50,
+        "priceMax": 80
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "range-from-to",
+      "query": "trail shoes from $100 to $140",
+      "tags": [
+        "range"
+      ],
+      "exact": true,
+      "ms": 1,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "priceMin": 100,
+        "priceMax": 140
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "priceMin": 100,
+        "priceMax": 140,
+        "keywords": [
+          "trail"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "trail"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "range-min",
+      "query": "sleeping bag over $300",
+      "tags": [
+        "range"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "sleeping-bags"
+        ],
+        "priceMin": 300
+      },
+      "predicted": {
+        "categories": [
+          "sleeping-bags"
+        ],
+        "priceMin": 300
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "union-gender",
+      "query": "men's or unisex gloves",
+      "tags": [
+        "union"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "accessories"
+        ],
+        "genders": [
+          "men",
+          "unisex"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "accessories"
+        ],
+        "genders": [
+          "men",
+          "unisex"
+        ],
+        "keywords": [
+          "gloves"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "gloves"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "union-gender-kids",
+      "query": "women's or kids sandals",
+      "tags": [
+        "union"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "kids",
+          "women"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "kids",
+          "women"
+        ],
+        "keywords": [
+          "sandals"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "sandals"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "union-brand",
+      "query": "Summitcraft or Granite Peak backpack under $250",
+      "tags": [
+        "union",
+        "range"
+      ],
+      "exact": true,
+      "ms": 1,
+      "expected": {
+        "categories": [
+          "backpacks"
+        ],
+        "brands": [
+          "Granite Peak Co.",
+          "Summitcraft"
+        ],
+        "priceMax": 250
+      },
+      "predicted": {
+        "categories": [
+          "backpacks"
+        ],
+        "brands": [
+          "Granite Peak Co.",
+          "Summitcraft"
+        ],
+        "priceMax": 250
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "negation-leather",
+      "query": "hiking boots, not leather",
+      "tags": [
+        "negation"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsExclude": [
+          "leather"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsExclude": [
+          "leather"
+        ],
+        "keywords": [
+          "hiking",
+          "boots"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "hiking",
+        "boots"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "negation-free",
+      "query": "suede-free approach shoes size 9",
+      "tags": [
+        "negation",
+        "size"
+      ],
+      "exact": true,
+      "ms": 1,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "sizes": [
+          "9"
+        ],
+        "materialsExclude": [
+          "suede"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "sizes": [
+          "9"
+        ],
+        "materialsExclude": [
+          "suede"
+        ],
+        "keywords": [
+          "approach"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "approach"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "negation-without",
+      "query": "jacket without down, size L",
+      "tags": [
+        "negation",
+        "size"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "sizes": [
+          "L"
+        ],
+        "materialsExclude": [
+          "down"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "sizes": [
+          "L"
+        ],
+        "materialsExclude": [
+          "down"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "negation-vegan",
+      "query": "vegan hiking boots",
+      "tags": [
+        "negation"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsExclude": [
+          "down",
+          "leather",
+          "merino",
+          "suede"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsExclude": [
+          "down",
+          "leather",
+          "merino",
+          "suede"
+        ],
+        "keywords": [
+          "hiking",
+          "boots"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "hiking",
+        "boots"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "negation-waterproof",
+      "query": "non waterproof sandals for summer",
+      "tags": [
+        "negation"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "waterproof": false
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "waterproof": false,
+        "keywords": [
+          "sandals",
+          "summer"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "sandals",
+        "summer"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "typo-waterproof",
+      "query": "waterprof jakcet for women",
+      "tags": [
+        "misspelling"
+      ],
+      "exact": true,
+      "ms": 2,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "waterproof": true
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "waterproof": true
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "typo-sandals",
+      "query": "mens sandels size 11",
+      "tags": [
+        "misspelling",
+        "size"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "men"
+        ],
+        "sizes": [
+          "11"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "men"
+        ],
+        "sizes": [
+          "11"
+        ],
+        "keywords": [
+          "sandals"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "sandals"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "typo-backpack",
+      "query": "ultralite backpak in olive",
+      "tags": [
+        "misspelling"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "backpacks"
+        ],
+        "colours": [
+          "olive"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "backpacks"
+        ],
+        "colours": [
+          "olive"
+        ],
+        "keywords": [
+          "ultralight"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "ultralight"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "colour-union-size",
+      "query": "blue or teal base layer, size M",
+      "tags": [
+        "colour",
+        "size",
+        "union"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "base-layers"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "colours": [
+          "blue",
+          "teal"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "base-layers"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "colours": [
+          "blue",
+          "teal"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "colour-synonym",
+      "query": "gray beanie",
+      "tags": [
+        "colour"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "accessories"
+        ],
+        "colours": [
+          "grey"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "accessories"
+        ],
+        "colours": [
+          "grey"
+        ],
+        "keywords": [
+          "beanie"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "beanie"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "size-tent-weight",
+      "query": "2 person tent under 2kg",
+      "tags": [
+        "size"
+      ],
+      "exact": true,
+      "ms": 1,
+      "expected": {
+        "categories": [
+          "tents"
+        ],
+        "sizes": [
+          "2P"
+        ],
+        "maxWeightGrams": 2000
+      },
+      "predicted": {
+        "categories": [
+          "tents"
+        ],
+        "sizes": [
+          "2P"
+        ],
+        "maxWeightGrams": 2000
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "size-kids",
+      "query": "kids winter boots size 3",
+      "tags": [
+        "size"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "kids"
+        ],
+        "sizes": [
+          "3"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "kids"
+        ],
+        "sizes": [
+          "3"
+        ],
+        "keywords": [
+          "boots",
+          "winter"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "boots",
+        "winter"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "size-multi",
+      "query": "Fjellstad trail runners size 10.5 or 11, on sale",
+      "tags": [
+        "size",
+        "union"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "brands": [
+          "Fjellstad"
+        ],
+        "sizes": [
+          "10.5",
+          "11"
+        ],
+        "onSale": true
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "brands": [
+          "Fjellstad"
+        ],
+        "sizes": [
+          "10.5",
+          "11"
+        ],
+        "onSale": true,
+        "keywords": [
+          "trail"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "trail"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "material-sale",
+      "query": "Northvale down jacket on sale",
+      "tags": [
+        "easy"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "brands": [
+          "Northvale"
+        ],
+        "materialsInclude": [
+          "down"
+        ],
+        "onSale": true
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "brands": [
+          "Northvale"
+        ],
+        "materialsInclude": [
+          "down"
+        ],
+        "onSale": true
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "material-stock",
+      "query": "gore-tex boots in stock",
+      "tags": [
+        "easy"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsInclude": [
+          "gore-tex"
+        ],
+        "inStock": true
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsInclude": [
+          "gore-tex"
+        ],
+        "inStock": true,
+        "keywords": [
+          "boots"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "boots"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "rating-decimal",
+      "query": "merino base layer, 4.5 stars or better",
+      "tags": [
+        "easy"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "base-layers"
+        ],
+        "minRating": 4.5,
+        "materialsInclude": [
+          "merino"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "base-layers"
+        ],
+        "minRating": 4.5,
+        "materialsInclude": [
+          "merino"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "many-filters",
+      "query": "women's softshell pants under 100 dollars size S",
+      "tags": [
+        "size",
+        "range"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "pants"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 100,
+        "sizes": [
+          "S"
+        ],
+        "materialsInclude": [
+          "softshell"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "pants"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 100,
+        "sizes": [
+          "S"
+        ],
+        "materialsInclude": [
+          "softshell"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "weight-rating-stock",
+      "query": "ultralight tent under 1kg, 4 stars and up, in stock",
+      "tags": [
+        "easy"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "tents"
+        ],
+        "minRating": 4,
+        "maxWeightGrams": 1000,
+        "inStock": true
+      },
+      "predicted": {
+        "categories": [
+          "tents"
+        ],
+        "minRating": 4,
+        "maxWeightGrams": 1000,
+        "inStock": true,
+        "keywords": [
+          "ultralight"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "ultralight"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "unmapped-dad",
+      "query": "rain jacket for my dad",
+      "tags": [
+        "unmapped"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "jackets"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "keywords": [
+          "rain"
+        ]
+      },
+      "unmapped": [
+        "for my dad"
+      ],
+      "keywords": [
+        "rain"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "unmapped-gift",
+      "query": "headlamp as a gift",
+      "tags": [
+        "unmapped"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "accessories"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "accessories"
+        ],
+        "keywords": [
+          "headlamp"
+        ]
+      },
+      "unmapped": [
+        "as a gift"
+      ],
+      "keywords": [
+        "headlamp"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "unmapped-cheap",
+      "query": "cheap red trekking poles",
+      "tags": [
+        "unmapped",
+        "colour"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "accessories"
+        ],
+        "colours": [
+          "red"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "accessories"
+        ],
+        "colours": [
+          "red"
+        ],
+        "keywords": [
+          "poles"
+        ]
+      },
+      "unmapped": [
+        "cheap"
+      ],
+      "keywords": [
+        "poles"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "unmapped-colour-negation",
+      "query": "hydration pack, not black",
+      "tags": [
+        "unmapped",
+        "negation"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "backpacks"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "backpacks"
+        ],
+        "keywords": [
+          "hydration"
+        ]
+      },
+      "unmapped": [
+        "not black"
+      ],
+      "keywords": [
+        "hydration"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "unmapped-waist",
+      "query": "pants that fit a 34 inch waist",
+      "tags": [
+        "unmapped"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "pants"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "pants"
+        ]
+      },
+      "unmapped": [
+        "fit a 34 inch waist"
+      ],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "holdout-number-words",
+      "query": "puffy coat for her, XS, under two hundred",
+      "tags": [
+        "holdout",
+        "range",
+        "size"
+      ],
+      "exact": false,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 200,
+        "sizes": [
+          "XS"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "sizes": [
+          "XS"
+        ]
+      },
+      "unmapped": [
+        "puffy",
+        "two hundred"
+      ],
+      "keywords": [],
+      "diffs": [
+        "priceMax: expected 200, got null",
+        "unmapped: expected [], got [\"puffy\",\"two hundred\"]"
+      ]
+    },
+    {
+      "id": "holdout-tent-people",
+      "query": "tent for 3 people, at most 600 dollars",
+      "tags": [
+        "holdout",
+        "size",
+        "range"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "tents"
+        ],
+        "priceMax": 600,
+        "sizes": [
+          "3P"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "tents"
+        ],
+        "priceMax": 600,
+        "sizes": [
+          "3P"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "holdout-many",
+      "query": "black or brown leather boots size 12 men's",
+      "tags": [
+        "holdout",
+        "colour",
+        "size",
+        "union"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "men"
+        ],
+        "sizes": [
+          "12"
+        ],
+        "colours": [
+          "black",
+          "brown"
+        ],
+        "materialsInclude": [
+          "leather"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "genders": [
+          "men"
+        ],
+        "sizes": [
+          "12"
+        ],
+        "colours": [
+          "black",
+          "brown"
+        ],
+        "materialsInclude": [
+          "leather"
+        ],
+        "keywords": [
+          "boots"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "boots"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "holdout-dont-use",
+      "query": "shoes that don't use leather",
+      "tags": [
+        "holdout",
+        "negation"
+      ],
+      "exact": false,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsExclude": [
+          "leather"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "footwear"
+        ],
+        "materialsInclude": [
+          "leather"
+        ]
+      },
+      "unmapped": [
+        "don't use"
+      ],
+      "keywords": [],
+      "diffs": [
+        "materialsInclude: expected null, got [\"leather\"]",
+        "materialsExclude: expected [\"leather\"], got null",
+        "unmapped: expected [], got [\"don't use\"]"
+      ]
+    },
+    {
+      "id": "holdout-highly-rated",
+      "query": "highly rated womens fleece jacket under 60",
+      "tags": [
+        "holdout",
+        "range"
+      ],
+      "exact": true,
+      "ms": 2,
+      "expected": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 60,
+        "minRating": 4,
+        "materialsInclude": [
+          "fleece"
+        ]
+      },
+      "predicted": {
+        "categories": [
+          "jackets"
+        ],
+        "genders": [
+          "women"
+        ],
+        "priceMax": 60,
+        "minRating": 4,
+        "materialsInclude": [
+          "fleece"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "holdout-weight-decimal",
+      "query": "sleeping bag lighter than 1.2 kg",
+      "tags": [
+        "holdout"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "sleeping-bags"
+        ],
+        "maxWeightGrams": 1200
+      },
+      "predicted": {
+        "categories": [
+          "sleeping-bags"
+        ],
+        "maxWeightGrams": 1200
+      },
+      "unmapped": [],
+      "keywords": [],
+      "diffs": []
+    },
+    {
+      "id": "holdout-brand-sale-size",
+      "query": "discounted Tidewater rain pants, large",
+      "tags": [
+        "holdout",
+        "size"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "pants"
+        ],
+        "brands": [
+          "Tidewater"
+        ],
+        "sizes": [
+          "L"
+        ],
+        "onSale": true
+      },
+      "predicted": {
+        "categories": [
+          "pants"
+        ],
+        "brands": [
+          "Tidewater"
+        ],
+        "sizes": [
+          "L"
+        ],
+        "onSale": true,
+        "keywords": [
+          "rain"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "rain"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "holdout-not-sold",
+      "query": "camp stove",
+      "tags": [
+        "holdout",
+        "unmapped"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {},
+      "predicted": {
+        "keywords": [
+          "camping"
+        ]
+      },
+      "unmapped": [
+        "stove"
+      ],
+      "keywords": [
+        "camping"
+      ],
+      "diffs": []
+    },
+    {
+      "id": "holdout-kids-mittens",
+      "query": "kids' waterproof mittens in pink",
+      "tags": [
+        "holdout",
+        "colour"
+      ],
+      "exact": true,
+      "ms": 0,
+      "expected": {
+        "categories": [
+          "accessories"
+        ],
+        "genders": [
+          "kids"
+        ],
+        "colours": [
+          "pink"
+        ],
+        "waterproof": true
+      },
+      "predicted": {
+        "categories": [
+          "accessories"
+        ],
+        "genders": [
+          "kids"
+        ],
+        "colours": [
+          "pink"
+        ],
+        "waterproof": true,
+        "keywords": [
+          "gloves"
+        ]
+      },
+      "unmapped": [],
+      "keywords": [
+        "gloves"
+      ],
+      "diffs": []
+    }
+  ]
+}
