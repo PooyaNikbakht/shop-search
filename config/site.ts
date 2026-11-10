@@ -8,8 +8,8 @@ export const site = {
   githubUrl: "https://github.com/PooyaNikbakht",
   /** Where the footer line "Fictional business. Demo by ..." links to. */
   creditUrl: process.env.NEXT_PUBLIC_CREDIT_URL ?? "https://pooya.website",
-  /** Empty while the repo is private: the Source and GitHub links are hidden. */
-  repoUrl: "" as string,
+  /** Empty hides the Source and GitHub links. */
+  repoUrl: "https://github.com/PooyaNikbakht/shop-search" as string,
   /** Made-up store name for the demo storefront. */
   storeName: "Switchback Supply",
   howItWorksUrl: "https://pooya.website/work/shop-search",
